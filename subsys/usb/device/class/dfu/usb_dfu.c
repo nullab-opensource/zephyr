@@ -118,7 +118,7 @@ USBD_CLASS_DESCR_DEFINE(primary, 0) struct usb_dfu_config dfu_cfg = {
 		.bNumEndpoints = 0,
 		.bInterfaceClass = USB_BCC_APPLICATION,
 		.bInterfaceSubClass = DFU_SUBCLASS,
-		.bInterfaceProtocol = DFU_RT_PROTOCOL,
+		.bInterfaceProtocol = DFU_MODE_PROTOCOL,
 		.iInterface = 0,
 	},
 	.dfu_descr = {
@@ -335,7 +335,7 @@ struct dfu_data_t {
 
 
 static struct dfu_data_t dfu_data = {
-	.state = appIDLE,
+	.state = dfuIDLE,
 	.status = statusOK,
 	.flash_area_id = DOWNLOAD_FLASH_AREA_ID,
 	.alt_setting = 0,
